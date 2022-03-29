@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    master:
+        build:
+            context: ./master
+            dockerfile: Dockerfile
+        image: master_image
+        container_name: master_container
+        restart: always
+        volumes:
+          - "./LocalStorage/master:/app/LocalStorage"
+        ports:
+          - "10051:10050"
